@@ -396,6 +396,110 @@ Ganti path di baris terakhir `spark.bat` sesuai output di atas.
 
 ---
 
+# 📸 Tampilan Aplikasi
+
+## 🔑 Pengujian API (JWT)
+
+![Tes API Token](frontend/assets/img/tes%20API%20token.png)
+
+---
+
+## 🗂️ Relasi Database
+
+![Relasi Database](frontend/assets/img/relasi%20table.png)
+
+---
+
+## 🏠 Dashboard
+
+![Dashboard](frontend/assets/img/halaman%20dashboard.png)
+
+---
+
+# 📦 Manajemen Barang
+
+### Halaman Barang
+
+![Halaman Barang](frontend/assets/img/halaman%20barang.png)
+
+### Tambah Barang
+
+![Tambah Barang](frontend/assets/img/tambah%20barang.png)
+
+### Edit Barang
+
+![Edit Barang](frontend/assets/img/edit%20barang.png)
+
+### Hapus Barang
+
+![Hapus Barang](frontend/assets/img/hapus%20barang.png)
+
+---
+
+# 🏷️ Manajemen Kategori
+
+### Halaman Kategori
+
+![Halaman Kategori](frontend/assets/img/halaman%20kategori.png)
+
+### Tambah Kategori
+
+![Tambah Kategori](frontend/assets/img/tambah%20kategori.png)
+
+### Edit Kategori
+
+![Edit Kategori](frontend/assets/img/edit%20kategori.png)
+
+---
+
+# 🚚 Manajemen Supplier
+
+### Halaman Supplier
+
+![Halaman Supplier](frontend/assets/img/halaman%20supplier.png)
+
+### Tambah Supplier
+
+![Tambah Supplier](frontend/assets/img/tambah%20supplier.png)
+
+### Edit Supplier
+
+![Edit Supplier](frontend/assets/img/edit%20supplier.png)
+
+---
+
+# 📊 Riwayat Stok
+
+![Riwayat Stok](frontend/assets/img/halaman%20riwayat%20stok.png)
+
+---
+
+# 📥 Stok Masuk
+
+![Tambah Stok Masuk](frontend/assets/img/tambah%20stok%20masuk.png)
+
+---
+
+# 📤 Stok Keluar
+
+![Tambah Stok Keluar](frontend/assets/img/tambah%20stok%20keluar.png)
+
+---
+
+# 👤 Manajemen Pengguna
+
+### Halaman Pengguna
+
+![Halaman Pengguna](frontend/assets/img/halaman%20pengguna.png)
+
+### Edit Pengguna
+
+![Edit Pengguna](frontend/assets/img/edit%20pengguna.png)
+
+---
+
+---
+
 > 💡 **Tip:** Simpan README ini di HP atau cetak, supaya mudah diikuti step by step.
 
 > Dibuat dengan ❤️ — E-Inventory Management System
