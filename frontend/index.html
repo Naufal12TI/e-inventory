@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>E-Inventory — Sistem Manajemen Inventaris Modern</title>
+  <meta name="description" content="E-Inventory adalah sistem manajemen inventaris berbasis web yang canggih untuk mengelola barang, supplier, dan stok perusahaan secara efisien." />
+  <meta name="keywords" content="inventaris, manajemen barang, sistem inventory, stok barang" />
+  <meta name="author" content="E-Inventory Team" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📦</text></svg>" />
+
+  <!-- ============================================================ -->
+  <!-- CDN Libraries                                                  -->
+  <!-- ============================================================ -->
+
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Chart.js — untuk grafik dashboard -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <!-- SweetAlert2 — untuk konfirmasi dialog -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- SheetJS (XLSX) — untuk export Excel -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <!-- ============================================================ -->
+  <!-- Tailwind Custom Configuration                                 -->
+  <!-- ============================================================ -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+          },
+          colors: {
+            primary: {
+              50:  '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+              950: '#172554',
+            },
+          },
+          animation: {
+            'fade-in':    'fadeIn 0.3s ease-in-out',
+            'slide-up':   'slideUp 0.3s ease-out',
+            'slide-down': 'slideDown 0.2s ease-out',
+            'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%':   { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%':   { opacity: '0', transform: 'translateY(16px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            slideDown: {
+              '0%':   { opacity: '0', transform: 'translateY(-16px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            pulseSoft: {
+              '0%, 100%': { opacity: '1' },
+              '50%':      { opacity: '0.6' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/app.css" />
+
+  <!-- ============================================================ -->
+  <!-- Import Map: Vue 3 & Vue Router (ES Modules dari CDN)         -->
+  <!-- ============================================================ -->
+  <script type="importmap">
+  {
+    "imports": {
+      "vue":        "https://unpkg.com/vue@3.4.21/dist/vue.esm-browser.js",
+      "vue-router": "https://unpkg.com/vue-router@4.3.0/dist/vue-router.esm-browser.js",
+      "@vue/devtools-api": "https://unpkg.com/@vue/devtools-api@6.6.1/lib/esm/index.js",
+      "axios":      "https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/esm/axios.min.js"
+    }
+  }
+  </script>
+</head>
+
+<body class="font-sans bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased transition-colors duration-300">
+
+  <!-- ============================================================ -->
+  <!-- App Mount Point                                               -->
+  <!-- Vue SPA akan di-render di sini                               -->
+  <!-- ============================================================ -->
+  <div id="app"></div>
+
+  <!-- ============================================================ -->
+  <!-- Vue App Entry Point (ES Module)                               -->
+  <!-- ============================================================ -->
+  <script type="module" src="assets/js/app.js"></script>
+
+</body>
+</html>

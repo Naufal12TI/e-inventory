@@ -1,0 +1,277 @@
+/* ============================================================
+   E-Inventory — Custom CSS
+   File ini berisi animasi kustom, transisi, dan override UI
+   yang tidak bisa dilakukan hanya dengan Tailwind.
+   ============================================================ */
+
+/* ────────────────────────────────────────────────────────────
+   Global Reset & Scrollbar
+   ──────────────────────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* ────────────────────────────────────────────────────────────
+   Vue Router Transition (untuk halaman publik: Landing, Login)
+   ──────────────────────────────────────────────────────────── */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+/* ────────────────────────────────────────────────────────────
+   Halaman dashboard (KeepAlive) — pastikan selalu visible
+   Animasi masuk ditangani oleh class animate-fade-in di tiap
+   halaman, yang sudah didefinisikan di Tailwind keyframes.
+   ──────────────────────────────────────────────────────────── */
+/* Fallback: pastikan <main> content area selalu opacity 1 */
+main > div {
+  opacity: 1 !important;
+}
+
+
+
+/* ────────────────────────────────────────────────────────────
+   Modal Transition
+   ──────────────────────────────────────────────────────────── */
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.25s ease;
+}
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+}
+.modal-enter-active .modal-box,
+.modal-leave-active .modal-box {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.modal-enter-from .modal-box {
+  transform: scale(0.95) translateY(12px);
+  opacity: 0;
+}
+.modal-leave-to .modal-box {
+  transform: scale(0.95) translateY(12px);
+  opacity: 0;
+}
+
+/* ────────────────────────────────────────────────────────────
+   Toast Notification
+   ──────────────────────────────────────────────────────────── */
+.toast-enter-active {
+  animation: toastSlideIn 0.35s ease forwards;
+}
+.toast-leave-active {
+  animation: toastSlideOut 0.3s ease forwards;
+}
+@keyframes toastSlideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);   opacity: 1; }
+}
+@keyframes toastSlideOut {
+  from { transform: translateX(0);   opacity: 1; }
+  to   { transform: translateX(100%); opacity: 0; }
+}
+
+/* ────────────────────────────────────────────────────────────
+   Sidebar & Layout
+   ──────────────────────────────────────────────────────────── */
+.sidebar-transition {
+  transition: width 0.25s ease, transform 0.25s ease;
+}
+
+/* ────────────────────────────────────────────────────────────
+   Skeleton Loading Animation
+   ──────────────────────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -500px 0; }
+  100% { background-position: 500px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 8px;
+}
+.dark .skeleton {
+  background: linear-gradient(90deg, #1e293b 25%, #263045 50%, #1e293b 75%);
+  background-size: 1000px 100%;
+}
+
+/* ────────────────────────────────────────────────────────────
+   Glassmorphism Card
+   ──────────────────────────────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+.dark .glass {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ────────────────────────────────────────────────────────────
+   Gradient Backgrounds
+   ──────────────────────────────────────────────────────────── */
+.gradient-primary {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 50%, #1e40af 100%);
+}
+.gradient-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 40%, #0f172a 100%);
+}
+.gradient-card {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+}
+
+/* ────────────────────────────────────────────────────────────
+   Button Ripple Effect
+   ──────────────────────────────────────────────────────────── */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+.btn-ripple::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0; left: 0;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 10%, transparent 60%);
+  transform: scale(10);
+  opacity: 0;
+  transition: transform 0.4s, opacity 0.4s;
+}
+.btn-ripple:active::after {
+  transform: scale(0);
+  opacity: 0.3;
+  transition: 0s;
+}
+
+/* ────────────────────────────────────────────────────────────
+   Table Row Hover
+   ──────────────────────────────────────────────────────────── */
+.table-row-hover {
+  transition: background-color 0.15s ease;
+}
+
+/* ────────────────────────────────────────────────────────────
+   Input Focus Ring
+   ──────────────────────────────────────────────────────────── */
+.input-field {
+  @apply w-full rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-900
+         placeholder-gray-400 transition-all duration-200
+         focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20;
+}
+.dark .input-field {
+  @apply border-gray-700 bg-gray-800 text-gray-100 placeholder-gray-500
+         focus:border-blue-400 focus:ring-blue-400/20;
+}
+
+/* ────────────────────────────────────────────────────────────
+   Nav Active State
+   ──────────────────────────────────────────────────────────── */
+.nav-item-active {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(37, 99, 235, 0.05) 100%);
+  border-left: 3px solid #2563eb;
+}
+.dark .nav-item-active {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(59, 130, 246, 0.05) 100%);
+  border-left: 3px solid #3b82f6;
+}
+
+/* ────────────────────────────────────────────────────────────
+   Landing Page Floating Animation
+   ──────────────────────────────────────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* ────────────────────────────────────────────────────────────
+   Gradient Text
+   ──────────────────────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6, #06b6d4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ────────────────────────────────────────────────────────────
+   SweetAlert2 Dark Mode Fix
+   ──────────────────────────────────────────────────────────── */
+.dark .swal2-popup {
+  background: #1e293b !important;
+  color: #f1f5f9 !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+}
+.dark .swal2-title { color: #f1f5f9 !important; }
+.dark .swal2-html-container { color: #94a3b8 !important; }
+
+/* ────────────────────────────────────────────────────────────
+   Responsive Table Container
+   ──────────────────────────────────────────────────────────── */
+.table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ────────────────────────────────────────────────────────────
+   Card Hover Effect
+   ──────────────────────────────────────────────────────────── */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+}
+.dark .card-hover:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ────────────────────────────────────────────────────────────
+   Progress Bar Animation
+   ──────────────────────────────────────────────────────────── */
+@keyframes progressBar {
+  from { width: 0%; }
+}
+.progress-animate {
+  animation: progressBar 1s ease-out forwards;
+}
