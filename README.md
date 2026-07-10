@@ -292,7 +292,6 @@ Setelah seeder selesai, 3 akun ini sudah tersedia untuk dicoba:
 |--------------|------------|---------------|
 | `admin`      | `admin123` | Administrator |
 | `superadmin` | `super123` | Administrator |
-| `staff`      | `staff123` | Staff         |
 
 ---
 
